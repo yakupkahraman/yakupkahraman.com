@@ -27,19 +27,27 @@ export function About() {
   const timeline = [
     {
       year: "2024",
-      title: "Senior Flutter Developer",
+      title: "Computer Engineering @ YTU",
       description:
-        "Leading mobile development for cross-platform applications.",
+        "Started B.Sc. in Computer Engineering at Yıldız Technical University.",
     },
     {
-      year: "2022",
-      title: "Mobile Developer",
-      description: "Building production-ready Flutter apps for startups.",
+      year: "2024–2025",
+      title: "MOBILAB Team Member · SKY LAB",
+      description:
+        "Joined the MOBILAB mobile apps development team at YTU SKY LAB, contributing to community-driven mobile projects.",
     },
     {
-      year: "2020",
-      title: "Started Coding Journey",
-      description: "Began learning programming with Python and C.",
+      year: "2025–Now",
+      title: "MOBILAB Team Leader · SKY LAB",
+      description:
+        "Leading the MOBILAB team — project planning, team coordination, and shipping cross-platform apps.",
+    },
+    {
+      year: "2025–2026",
+      title: "Flutter Developer · WeStudio",
+      description:
+        "Built production Flutter applications as an intern and developer at WeStudio.",
     },
   ];
 
@@ -59,18 +67,23 @@ export function About() {
             </h2>
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                I&apos;m a Flutter-focused mobile developer who cares about
-                polish, performance, and maintainable architecture. I like
-                shipping products people rely on every day.
+                I&apos;m Yakup, a first-year Computer Engineering student at
+                Yıldız Technical University and a mobile app developer who
+                loves learning and building new things. I lead the MOBILAB team
+                at YTU SKY LAB, where I&apos;ve grown my skills and learned to
+                collaborate effectively on real projects.
               </p>
               <p>
-                Alongside Dart and Flutter, I bring experience with C, web
-                stacks, and Python—useful for tooling, backends, and bridging
-                gaps across a codebase.
+                I&apos;m Co-Founder at HeyAI Studio, a Core Team member at GDG
+                on Campus YTU, and previously worked as a Flutter Developer at
+                WeStudio. My focus is Flutter, C, Python, and cross-platform
+                mobile development.
               </p>
               <p>
-                yakupkahraman.com is open source on GitHub and deployed on
-                Vercel; I enjoy sharing work and iterating in public.
+                I enjoy every part of the mobile app development process and
+                always look for ways to learn new technologies. I&apos;m open
+                to meeting new people, sharing ideas, and collaborating on
+                exciting projects.
               </p>
             </div>
           </motion.div>

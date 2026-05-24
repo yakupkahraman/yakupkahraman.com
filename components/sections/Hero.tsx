@@ -165,8 +165,8 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 text-lg text-muted max-w-xl mx-auto"
         >
-          Cross-platform mobile apps, solid systems thinking, and interfaces
-          that feel as good as they look.
+          Building user-friendly, high-performance mobile apps — from SKY LAB
+          community projects to startup products.
         </motion.p>
 
         <motion.div

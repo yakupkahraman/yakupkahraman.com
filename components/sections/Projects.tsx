@@ -195,36 +195,44 @@ function ProjectCard({
 export function Projects() {
   const projects = [
     {
-      title: "FlutterFlow Dashboard",
+      title: "Bird",
       description:
-        "A comprehensive admin dashboard built with Flutter for web and mobile platforms.",
-      tags: ["Flutter", "Dart", "Firebase"],
-      githubUrl: "https://github.com/yakupkahraman",
-      liveUrl: "https://yakupkahraman.com",
+        "A simple and beautiful cross-platform code editor built with Flutter.",
+      tags: ["Flutter", "Dart"],
+      githubUrl: "https://github.com/yakupkahraman/bird",
+      liveUrl: "https://github.com/yakupkahraman/bird",
     },
     {
-      title: "E-Commerce App",
+      title: "HeyAI Llama Hackathon",
       description:
-        "Cross-platform shopping app with real-time inventory and payment integration.",
-      tags: ["Flutter", "Stripe", "Node.js"],
-      githubUrl: "https://github.com/yakupkahraman",
-      liveUrl: "https://yakupkahraman.com",
+        "HeyAI team's project for the YTU Startup House × Meta collaboration hackathon.",
+      tags: ["Flutter", "Dart", "AI"],
+      githubUrl: "https://github.com/yakupkahraman/heyai-llama-hackathon",
+      liveUrl: "https://github.com/yakupkahraman/heyai-llama-hackathon",
     },
     {
-      title: "Task Manager",
+      title: "yakupkahraman.com",
       description:
-        "Productivity app with offline-first architecture and cloud sync capabilities.",
-      tags: ["Flutter", "SQLite", "REST API"],
-      githubUrl: "https://github.com/yakupkahraman",
-      liveUrl: "https://yakupkahraman.com",
-    },
-    {
-      title: "Portfolio Website",
-      description:
-        "This site: Next.js App Router, Tailwind v4, Motion, and Lenis smooth scroll.",
+        "Personal portfolio site — Next.js App Router, Tailwind, Motion, and Lenis smooth scroll.",
       tags: ["Next.js", "TypeScript", "Tailwind"],
-      githubUrl: "https://github.com/yakupkahraman",
-      liveUrl: "https://yakupkahraman.com",
+      githubUrl: "https://github.com/yakupkahraman/yakupkahraman.com",
+      liveUrl: "https://www.yakupkahraman.com",
+    },
+    {
+      title: "flutter-nfc-manager",
+      description:
+        "Flutter plugin for accessing NFC features on Android and iOS, published on pub.dev.",
+      tags: ["Flutter", "Dart", "NFC"],
+      githubUrl: "https://github.com/yakupkahraman/flutter-nfc-manager",
+      liveUrl: "https://pub.dev/packages/nfc_manager",
+    },
+    {
+      title: "Notes App",
+      description:
+        "Minimal note-taking app with offline-first architecture powered by Isar database.",
+      tags: ["Flutter", "Dart", "Isar"],
+      githubUrl: "https://github.com/yakupkahraman/notes-app",
+      liveUrl: "https://github.com/yakupkahraman/notes-app",
     },
   ];
 
