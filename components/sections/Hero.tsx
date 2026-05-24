@@ -58,6 +58,20 @@ function InteractiveDotGrid() {
       mouseRef.current = { x: -1000, y: -1000 };
     };
 
+    const getDotRgb = () =>
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "107, 107, 107"
+        : "20, 20, 20";
+
+    let dotRgb = getDotRgb();
+
+    const handleThemeChange = () => {
+      dotRgb = getDotRgb();
+    };
+
+    const themeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    themeQuery.addEventListener("change", handleThemeChange);
+
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const mouse = mouseRef.current;
@@ -88,7 +102,7 @@ function InteractiveDotGrid() {
 
         ctx.beginPath();
         ctx.arc(dot.currentX, dot.currentY, radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(107, 107, 107, ${opacity})`;
+        ctx.fillStyle = `rgba(${dotRgb}, ${opacity})`;
         ctx.fill();
       }
 
@@ -102,6 +116,7 @@ function InteractiveDotGrid() {
     animationRef.current = requestAnimationFrame(animate);
 
     return () => {
+      themeQuery.removeEventListener("change", handleThemeChange);
       window.removeEventListener("resize", resize);
       window.removeEventListener("mousemove", handleMouseMove);
       canvas.removeEventListener("mouseleave", handleMouseLeave);
