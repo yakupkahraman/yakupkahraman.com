@@ -78,6 +78,9 @@
   body {
     @apply bg-background text-foreground;
   }
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
 }
 
 /* Avoid fighting Lenis when `scroll-behavior: smooth` is set elsewhere */
