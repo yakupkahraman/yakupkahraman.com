@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useSmoothScrollAnchor } from "@/hooks/use-smooth-scroll";
 
 export function AnimatedButton({
   href,
@@ -14,12 +15,19 @@ export function AnimatedButton({
   external?: boolean;
 }) {
   const isPrimary = variant === "primary";
+  const isHashLink = href.startsWith("#");
+  const scrollToAnchor = useSmoothScrollAnchor();
 
   return (
     <motion.a
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
+      onClick={
+        isHashLink && !external
+          ? (event) => scrollToAnchor(event, href)
+          : undefined
+      }
       className={`group relative inline-flex items-center gap-2 px-6 py-3 font-semibold rounded-lg overflow-hidden ${
         isPrimary
           ? "bg-accent text-bg"

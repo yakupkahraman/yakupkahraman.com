@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useSmoothScrollAnchor } from "@/hooks/use-smooth-scroll";
 
 const NAV_SECTIONS = ["about", "projects", "contact"] as const;
 
@@ -15,9 +16,12 @@ export function SiteHeader() {
 }
 
 function Logo() {
+  const scrollToAnchor = useSmoothScrollAnchor();
+
   return (
     <motion.a
       href="#hero"
+      onClick={(event) => scrollToAnchor(event, "#hero")}
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.6 }}
@@ -30,6 +34,7 @@ function Logo() {
 
 function Navigation() {
   const [activeSection, setActiveSection] = useState<string>("");
+  const scrollToAnchor = useSmoothScrollAnchor();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -70,6 +75,7 @@ function Navigation() {
           <a
             key={link.label}
             href={link.href}
+            onClick={(event) => scrollToAnchor(event, link.href)}
             className={`group relative text-xs font-medium tracking-widest pr-4 transition-colors duration-300 ${
               isActive ? "text-text" : "text-muted"
             }`}
