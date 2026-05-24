@@ -1,9 +1,84 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
+import { AnimatedIconLink } from "@/components/AnimatedIconLink";
 import { fadeUpVariants } from "@/lib/motion-variants";
+
+const MARQUEE_DURATION_S = 30;
+const MARQUEE_SLOW_DURATION_S = 120;
+
+function ProjectsMarquee({ children }: { children: React.ReactNode }) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const offsetRef = useRef(0);
+  const slowRef = useRef(false);
+  const loopWidthRef = useRef(0);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const measure = () => {
+      loopWidthRef.current = track.scrollWidth / 3;
+    };
+
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(track);
+
+    let raf = 0;
+    let last = performance.now();
+
+    const tick = (now: number) => {
+      const dt = Math.min((now - last) / 1000, 0.05);
+      last = now;
+
+      const loopWidth = loopWidthRef.current;
+      if (loopWidth > 0) {
+        const duration = slowRef.current
+          ? MARQUEE_SLOW_DURATION_S
+          : MARQUEE_DURATION_S;
+        offsetRef.current += (loopWidth / duration) * dt;
+        if (offsetRef.current >= loopWidth) {
+          offsetRef.current %= loopWidth;
+        }
+        track.style.transform = `translate3d(-${offsetRef.current}px, 0, 0)`;
+      }
+
+      raf = requestAnimationFrame(tick);
+    };
+
+    raf = requestAnimationFrame(tick);
+
+    return () => {
+      ro.disconnect();
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => {
+        slowRef.current = true;
+      }}
+      onMouseLeave={() => {
+        slowRef.current = false;
+      }}
+    >
+      <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-bg to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none" />
+
+      <div
+        ref={trackRef}
+        className="flex gap-8 py-4 w-fit will-change-transform"
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
 
 function ProjectCard({
   title,
@@ -97,28 +172,20 @@ function ProjectCard({
           ))}
         </div>
         <div className="flex items-center gap-4 pt-4 border-t border-border group-hover:border-accent/30 transition-colors">
-          <motion.a
+          <AnimatedIconLink
             href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.3, rotate: 10 }}
-            whileTap={{ scale: 0.9 }}
-            className="text-muted hover:text-accent transition-colors"
-            aria-label="View on GitHub"
+            label="View on GitHub"
+            rotateOnHover={10}
           >
             <Github className="w-5 h-5" />
-          </motion.a>
-          <motion.a
+          </AnimatedIconLink>
+          <AnimatedIconLink
             href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.3, rotate: -10 }}
-            whileTap={{ scale: 0.9 }}
-            className="text-muted hover:text-accent transition-colors"
-            aria-label="View live project"
+            label="View live project"
+            rotateOnHover={-10}
           >
             <ExternalLink className="w-5 h-5" />
-          </motion.a>
+          </AnimatedIconLink>
         </div>
       </div>
     </motion.div>
@@ -179,28 +246,11 @@ export function Projects() {
         </motion.div>
       </div>
 
-      <div className="relative group/marquee">
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-bg to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-bg to-transparent z-10 pointer-events-none" />
-
-        <motion.div
-          className="flex gap-8 py-4"
-          animate={{ x: ["0%", "-33.333%"] }}
-          transition={{
-            x: {
-              duration: 30,
-              repeat: Infinity,
-              ease: "linear",
-            },
-          }}
-          style={{ width: "fit-content" }}
-          whileHover={{ animationPlayState: "paused" }}
-        >
-          {duplicatedProjects.map((project, index) => (
-            <ProjectCard key={`${project.title}-${index}`} {...project} />
-          ))}
-        </motion.div>
-      </div>
+      <ProjectsMarquee>
+        {duplicatedProjects.map((project, index) => (
+          <ProjectCard key={`${project.title}-${index}`} {...project} />
+        ))}
+      </ProjectsMarquee>
     </section>
   );
 }

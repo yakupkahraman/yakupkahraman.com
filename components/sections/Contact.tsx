@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 import { AnimatedButton } from "@/components/AnimatedButton";
+import { AnimatedIconLink } from "@/components/AnimatedIconLink";
 import { fadeUpVariants, staggerContainer } from "@/lib/motion-variants";
 
 export function Contact() {
@@ -45,9 +46,12 @@ export function Contact() {
             variants={fadeUpVariants}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <AnimatedButton href="mailto:yakup@yakupkahraman.com" variant="primary">
+            <AnimatedButton
+              href="mailto:kahraman.yakup@outlook.com"
+              variant="primary"
+            >
               <Mail className="w-5 h-5" />
-              yakup@yakupkahraman.com
+              kahraman.yakup@outlook.com
             </AnimatedButton>
           </motion.div>
 
@@ -56,17 +60,16 @@ export function Contact() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex items-center justify-center gap-6 mt-8"
           >
-            {socials.map((social) => (
-              <a
+            {socials.map((social, index) => (
+              <AnimatedIconLink
                 key={social.name}
                 href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 text-muted hover:text-text hover:bg-surface border border-transparent hover:border-border rounded-lg transition-all"
-                aria-label={social.name}
+                label={social.name}
+                rotateOnHover={index % 2 === 0 ? 10 : -10}
+                className="p-3 hover:bg-surface border border-transparent hover:border-border rounded-lg inline-flex"
               >
                 <social.icon className="w-6 h-6" />
-              </a>
+              </AnimatedIconLink>
             ))}
           </motion.div>
         </motion.div>
