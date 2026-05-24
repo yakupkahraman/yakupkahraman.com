@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { AnimatedButton } from "@/components/AnimatedButton";
 import { AnimatedIconLink } from "@/components/AnimatedIconLink";
 import { fadeUpVariants, staggerContainer } from "@/lib/motion-variants";
@@ -12,9 +12,8 @@ export function Contact() {
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com/in/yakupkahraman",
+      url: "https://linkedin.com/in/yakup-kahraman",
     },
-    { name: "Twitter", icon: Twitter, url: "https://twitter.com/yakupkahraman" },
   ];
 
   return (
