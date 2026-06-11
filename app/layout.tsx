@@ -36,8 +36,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased text-text bg-bg`}
       >
         <LenisProvider>{children}</LenisProvider>
-        {process.env.NODE_ENV === "production" && <Analytics />}
-        <SpeedInsights />
+        {process.env.NODE_ENV === "production" && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
       </body>
     </html>
   );
