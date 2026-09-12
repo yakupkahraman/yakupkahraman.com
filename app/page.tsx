@@ -33,8 +33,6 @@ export default function Page() {
           >
             LinkedIn
           </a>
-          <span className="hidden sm:inline">·</span>
-          <span>Deployed on Vercel</span>
         </div>
       </footer>
     </main>
