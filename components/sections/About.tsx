@@ -26,28 +26,46 @@ function TimelineEntry({
 export function About() {
   const timeline = [
     {
-      year: "2024",
+      year: "2024 — Now",
       title: "Computer Engineering @ YTU",
       description:
-        "Started B.Sc. in Computer Engineering at Yıldız Technical University.",
+        "B.Sc. in Computer Engineering at Yıldız Technical University.",
     },
     {
-      year: "2024–2025",
+      year: "Oct 2024 — Aug 2025",
       title: "MOBILAB Team Member · SKY LAB",
       description:
-        "Joined the MOBILAB mobile apps development team at YTU SKY LAB, contributing to community-driven mobile projects.",
+        "Contributed to core Flutter deliverables and helped organize the ARTLAB and YILDIZJAM summits.",
     },
     {
-      year: "2025–Now",
+      year: "Aug 2025 — Now",
       title: "MOBILAB Team Leader · SKY LAB",
       description:
-        "Leading the MOBILAB team — project planning, team coordination, and shipping cross-platform apps.",
+        "Leading the team, guiding Flutter projects, and delivering workshops at GECEKODU and PUSULAM YILDIZ.",
     },
     {
-      year: "2025–2026",
-      title: "Flutter Developer · WeStudio",
+      year: "Oct 2025 — Jan 2026",
+      title: "Flutter Developer Intern · WeStudio",
       description:
-        "Built production Flutter applications as an intern and developer at WeStudio.",
+        "Shipped cross-platform iOS and Android apps from a single Flutter codebase, from scoping to store release.",
+    },
+    {
+      year: "Nov 2025 — Now",
+      title: "Core Team Member · GDG on Campus YTU",
+      description:
+        "Organizing campus-wide tech events and community initiatives for YTU students.",
+    },
+    {
+      year: "Nov 2025 — Now",
+      title: "Trainee · YTU Startup House",
+      description:
+        "Entrepreneurship bootcamp alongside 100 selected participants.",
+    },
+    {
+      year: "Dec 2025 — May 2026",
+      title: "Co-Founder · HeyAI Studio",
+      description:
+        "Led full technical development of HeyUni and HeyLex, two EdTech MVPs.",
     },
   ];
 
@@ -67,23 +85,29 @@ export function About() {
             </h2>
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                I&apos;m Yakup, a first-year Computer Engineering student at
-                Yıldız Technical University and a mobile app developer who
-                loves learning and building new things. I lead the MOBILAB team
-                at YTU SKY LAB, where I&apos;ve grown my skills and learned to
-                collaborate effectively on real projects.
+                I&apos;m Yakup, a Computer Engineering student at Yıldız
+                Technical University and a Flutter developer passionate about
+                applied AI and developer communities. I lead the MOBILAB team at
+                YTU SKY LAB, where I guide Flutter projects, run technical
+                workshops, and mentor members.
               </p>
               <p>
-                I&apos;m Co-Founder at HeyAI Studio, a Core Team member at GDG
-                on Campus YTU, and previously worked as a Flutter Developer at
-                WeStudio. My focus is Flutter, C, Python, and cross-platform
-                mobile development.
+                I co-founded HeyAI Studio and led the technical development of
+                HeyUni and HeyLex — two EdTech MVPs that took 1st place at the
+                StaryUp Bootcamp &apos;25 hackathon and at the YTU Startup House
+                × Meta hackathon. Sesim, my Turkish Sign Language → Text
+                project, placed 3rd at the 2026 StarUP Bootcamp hackathon with
+                Türksat and NVIDIA, and I&apos;ve been a finalist at Boğaziçi
+                Teknopark Bright Masterclass and Biruni Teknopark B&apos;IDEA
+                Demo Day.
               </p>
               <p>
-                I enjoy every part of the mobile app development process and
-                always look for ways to learn new technologies. I&apos;m open
-                to meeting new people, sharing ideas, and collaborating on
-                exciting projects.
+                I&apos;m a Core Team member at GDG on Campus YTU and a trainee at
+                YTU Startup House, and previously worked as a Flutter Developer
+                Intern at WeStudio. My focus is Flutter, Next.js, FastAPI,
+                Supabase, and LLM integration. I&apos;m always excited to bring
+                cutting-edge tech to campus, empower fellow students, and build
+                cool things together.
               </p>
             </div>
           </motion.div>
@@ -95,7 +119,7 @@ export function About() {
             <h3 className="text-xl font-semibold text-text mb-6">Journey</h3>
             <div className="relative">
               {timeline.map((entry) => (
-                <TimelineEntry key={entry.year} {...entry} />
+                <TimelineEntry key={entry.title} {...entry} />
               ))}
             </div>
           </motion.div>
