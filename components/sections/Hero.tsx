@@ -157,7 +157,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mt-4 text-xl md:text-2xl text-muted font-medium"
         >
-          Flutter Mobile Developer · C · Web · Python
+          Flutter Developer · AI/LLM · Next.js · Python
         </motion.p>
 
         <motion.p
@@ -165,8 +165,8 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 text-lg text-muted max-w-xl mx-auto"
         >
-          Building user-friendly, high-performance mobile apps — from SKY LAB
-          community projects to startup products.
+          Building cross-platform apps and applied AI — from Turkish Sign
+          Language accessibility tools to experimental AI protocols.
         </motion.p>
 
         <motion.div

@@ -91,7 +91,7 @@ function ProjectCard({
   description: string;
   tags: string[];
   githubUrl: string;
-  liveUrl: string;
+  liveUrl?: string;
 }) {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -179,13 +179,15 @@ function ProjectCard({
           >
             <Github className="w-5 h-5" />
           </AnimatedIconLink>
-          <AnimatedIconLink
-            href={liveUrl}
-            label="View live project"
-            rotateOnHover={-10}
-          >
-            <ExternalLink className="w-5 h-5" />
-          </AnimatedIconLink>
+          {liveUrl && (
+            <AnimatedIconLink
+              href={liveUrl}
+              label="View live project"
+              rotateOnHover={-10}
+            >
+              <ExternalLink className="w-5 h-5" />
+            </AnimatedIconLink>
+          )}
         </div>
       </div>
     </motion.div>
@@ -197,18 +199,44 @@ export function Projects() {
     {
       title: "Bird",
       description:
-        "A simple and beautiful cross-platform code editor built with Flutter.",
-      tags: ["Flutter", "Dart"],
+        "An IDE for Flutter development, written in Flutter itself. Zero webviews, zero Monaco, zero Electron.",
+      tags: ["Flutter", "Dart", "Desktop"],
       githubUrl: "https://github.com/yakupkahraman/bird",
-      liveUrl: "https://github.com/yakupkahraman/bird",
     },
     {
-      title: "HeyAI Llama Hackathon",
+      title: "AEP — AI Emotion Protocol",
       description:
-        "HeyAI team's project for the YTU Startup House × Meta collaboration hackathon.",
+        "Open-source protocol that decodes an LLM's internal emotional state from residual-stream activations.",
+      tags: ["TypeScript", "LLM", "Research"],
+      githubUrl: "https://github.com/yakupkahraman/aep",
+    },
+    {
+      title: "HeyLex",
+      description:
+        "HeyAI's EdTech MVP, built at the hackathon run with YTU Startup House and Meta. Won 1st place.",
       tags: ["Flutter", "Dart", "AI"],
-      githubUrl: "https://github.com/yakupkahraman/heyai-llama-hackathon",
-      liveUrl: "https://github.com/yakupkahraman/heyai-llama-hackathon",
+      githubUrl: "https://github.com/yakupkahraman/heylex-hackathon",
+    },
+    {
+      title: "HeyUni",
+      description:
+        "HeyAI's EdTech MVP from the YTU Startup House StaryUp Bootcamp '25 hackathon. Won 1st place.",
+      tags: ["Flutter", "AI", "EdTech"],
+      githubUrl: "https://github.com/yakupkahraman/heyuni-hackathon",
+    },
+    {
+      title: "SkyWeb",
+      description:
+        "Experimental web ecosystem exploring how the web works under the hood — a custom sky:// protocol, a Flutter browser, and edge DNS.",
+      tags: ["Flutter", "Dart", "Networking"],
+      githubUrl: "https://github.com/yakupkahraman/skyweb",
+    },
+    {
+      title: "Flutter Mini Projects",
+      description:
+        "A collection of beginner-friendly Flutter mini projects to help others learn by building.",
+      tags: ["Flutter", "Dart", "Open Source"],
+      githubUrl: "https://github.com/yakupkahraman/flutter-mini-projects",
     },
     {
       title: "yakupkahraman.com",
@@ -217,22 +245,6 @@ export function Projects() {
       tags: ["Next.js", "TypeScript", "Tailwind"],
       githubUrl: "https://github.com/yakupkahraman/yakupkahraman.com",
       liveUrl: "https://www.yakupkahraman.com",
-    },
-    {
-      title: "flutter-nfc-manager",
-      description:
-        "Flutter plugin for accessing NFC features on Android and iOS, published on pub.dev.",
-      tags: ["Flutter", "Dart", "NFC"],
-      githubUrl: "https://github.com/yakupkahraman/flutter-nfc-manager",
-      liveUrl: "https://pub.dev/packages/nfc_manager",
-    },
-    {
-      title: "Notes App",
-      description:
-        "Minimal note-taking app with offline-first architecture powered by Isar database.",
-      tags: ["Flutter", "Dart", "Isar"],
-      githubUrl: "https://github.com/yakupkahraman/notes-app",
-      liveUrl: "https://github.com/yakupkahraman/notes-app",
     },
   ];
 

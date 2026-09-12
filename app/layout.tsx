@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Yakup Kahraman | Flutter Mobile Developer",
+  title: "Yakup Kahraman | Flutter & AI Developer",
   description:
-    "Flutter mobile developer. Experience across C, web, and Python. yakupkahraman.com — open source on GitHub, deployed on Vercel.",
+    "Flutter developer and Computer Engineering student at Yıldız Technical University. Cross-platform apps and applied AI — Flutter, Next.js, FastAPI, Supabase, and LLM integration. yakupkahraman.com — open source on GitHub, deployed on Vercel.",
   metadataBase: new URL("https://yakupkahraman.com"),
   icons: {
     icon: "/icon.svg",

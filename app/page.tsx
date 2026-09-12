@@ -26,7 +26,7 @@ export default function Page() {
           </a>
           <span className="hidden sm:inline">·</span>
           <a
-            href="https://www.linkedin.com/in/yakup-kahraman"
+            href="https://linkedin.com/in/yakup-kahraman"
             className="underline-offset-4 hover:text-text hover:underline"
             target="_blank"
             rel="noopener noreferrer"
