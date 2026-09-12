@@ -122,8 +122,6 @@ function ProjectCard({
         }}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-accent/10 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
-
       {isHovered && (
         <>
           <motion.div
@@ -261,7 +259,7 @@ export function Projects() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-text mb-12 text-center">
-            Selected Work
+            Projects
           </h2>
         </motion.div>
       </div>
