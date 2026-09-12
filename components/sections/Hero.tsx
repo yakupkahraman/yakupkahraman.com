@@ -165,8 +165,8 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-6 text-lg text-muted max-w-xl mx-auto"
         >
-          Building cross-platform apps and applied AI — from Turkish Sign
-          Language accessibility tools to experimental AI protocols.
+          Computer Engineering student at Yıldız Technical University, building
+          cross-platform apps and applied AI.
         </motion.p>
 
         <motion.div
