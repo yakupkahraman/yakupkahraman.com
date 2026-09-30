@@ -1,0 +1,4 @@
+# sharp and unrs-resolver ship prebuilt binaries; their install scripts are not needed.
+allowBuilds:
+  sharp: false
+  unrs-resolver: false
