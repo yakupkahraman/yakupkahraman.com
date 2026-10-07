@@ -11,7 +11,7 @@ export const site = {
   role: "Software Engineer",
   tagline: "Building some cool stuffs",
   email: "me@yakupkahraman.com",
-  url: "https://yakupkahraman.com",
+  url: "https://www.yakupkahraman.com",
   logo: "/avatar.png",
   logoAlt: "Yakup Kahraman logo: a bird with spread wings over the letters YK",
 };

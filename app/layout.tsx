@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   description:
     "Software engineer and Computer Engineering student at Yıldız Technical University. I am building some cool stuffs.",
   metadataBase: new URL(site.url),
+  alternates: { canonical: "/" },
 };
 
 export default function RootLayout({
