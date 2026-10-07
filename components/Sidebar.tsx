@@ -7,10 +7,10 @@ export function Sidebar() {
   return (
     <header className="flex flex-col justify-between py-16 lg:sticky lg:top-0 lg:h-screen lg:w-80 lg:shrink-0 lg:py-24 xl:w-96">
       <div>
-        <h1 className="font-display text-5xl font-bold leading-[0.95] tracking-tighter">
+        <h1 className="text-5xl font-bold leading-[0.95] tracking-tighter">
           {site.name}
         </h1>
-        <p className="mt-4 font-display text-xl font-medium tracking-tight text-text">
+        <p className="mt-4 text-xl font-medium tracking-tight text-text">
           {site.role}
         </p>
         <p className="mt-2 text-muted">{site.tagline}</p>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Instrument_Sans } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { LenisProvider } from "@/components/providers/LenisProvider";
@@ -7,13 +7,11 @@ import { site } from "@/content/site";
 import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
-const instrumentSans = Instrument_Sans({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-instrument-sans",
-});
-
+// One family throughout: the optical-size axis keeps it tight and characterful
+// at headline sizes and open and readable at text sizes.
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin", "latin-ext"],
+  axes: ["opsz"],
   variable: "--font-bricolage",
 });
 
@@ -35,7 +33,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body
-        className={`${instrumentSans.variable} ${bricolage.variable} font-sans antialiased bg-bg text-text`}
+        className={`${bricolage.variable} font-sans antialiased bg-bg text-text`}
       >
         <LenisProvider>{children}</LenisProvider>
         {process.env.NODE_ENV === "production" && (

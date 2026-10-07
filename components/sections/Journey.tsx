@@ -14,7 +14,7 @@ export function Journey() {
               {entry.period}
             </p>
             <div>
-              <h3 className="font-display text-lg font-medium tracking-tight text-text">
+              <h3 className="text-lg font-medium tracking-tight text-text">
                 {entry.title}
                 <span className="text-muted">, {entry.org}</span>
               </h3>

@@ -11,7 +11,7 @@ export function Projects() {
         {projects.map((project) => (
           <li key={project.title}>
             <a {...linkProps(project.url)} className="group block outline-none">
-              <h3 className="flex items-center gap-1 font-display text-lg font-medium tracking-tight text-text">
+              <h3 className="flex items-center gap-1 text-lg font-medium tracking-tight text-text">
                 <HoverUnderline>{project.title}</HoverUnderline>
                 <ArrowUpRightIcon
                   size={16}
